@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--
+--------------------------------------
+Belgian Buddha Food-Truck Website
+--------------------------------------
+Created and edited by David R. McGhee
+--------------------------------------
+--------------------------------------
+CSS files via TEMPLATED and Google
+(http://templated.co)
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Belgian Buddha</title>
+<meta name="keywords" content="belgian, buddha, indian, thai, cuisine, curry, restaurant, food, france,
+ switzerland, veigy, bonne, ville la grand, messery, lac, leman, gy, savoie, geneva, geneve, curry" />
+<meta name="description" content="Location" />
+<link href="http://fonts.googleapis.com/css?family=Chivo:400,900" rel="stylesheet" />
+<!-- Menu styling -->
+<!-- .css files within our web folder -->
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Font styling -->
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- Google Maps Initialising -->
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+<script>
+// Create a Google Map
+var myCenter=new google.maps.LatLng(46.2654165,6.2645293);
+function initialize()
+{
+
+// Specify map settings
+var mapProp = {
+  center:myCenter,
+  zoom:11,
+  panControl:true,
+    zoomControl:true,
+    mapTypeControl:false,
+    scaleControl:false,
+    streetViewControl:true,
+    overviewMapControl:false,
+    rotateControl:false, 
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  
+// Create markers and set locations
+var marker=new google.maps.Marker({
+  position:new google.maps.LatLng(46.349855, 6.291178),
+  });
+  
+var marker2=new google.maps.Marker({
+  position:new google.maps.LatLng(46.269403, 6.256739),
+  animation:google.maps.Animation.BOUNCE
+  });
+
+var marker3=new google.maps.Marker({
+  position:new google.maps.LatLng(46.205992, 6.276458),
+  //icon: 'http://maps.google.com/mapfiles/ms/micons/restaurant.png'
+  });
+  
+var marker4=new google.maps.Marker({
+  position:new google.maps.LatLng(46.170154, 6.316197),
+  });
+  
+marker.setMap(map);
+marker2.setMap(map);
+marker3.setMap(map);
+marker4.setMap(map);
+    
+// Click marker to see dialog box
+google.maps.event.addListener(marker,'click',function() {
+  //map.setZoom(9);
+  //map.setCenter(marker.getPosition());
+  var infowindow = new google.maps.InfoWindow({
+  content:"Thursday 16h00 - 20h00"
+  });
+  infowindow.open(map,marker);
+  });
+google.maps.event.addListener(marker2,'click',function() {
+  //map.setZoom(9);
+  //map.setCenter(marker2.getPosition());
+  var infowindow2 = new google.maps.InfoWindow({
+  content:"Friday 16h00 - 21h00"
+  });
+  infowindow2.open(map,marker2);
+  });
+google.maps.event.addListener(marker3,'click',function() {
+  //map.setZoom(9);
+  //map.setCenter(marker3.getPosition());
+  var infowindow3 = new google.maps.InfoWindow({
+  content:"Friday 11h45 - 14h00"
+  });
+  infowindow3.open(map,marker3);
+  });
+google.maps.event.addListener(marker4,'click',function() {
+  //map.setZoom(9);
+  //map.setCenter(marker3.getPosition());
+  var infowindow4 = new google.maps.InfoWindow({
+  content:"Wednesday 16h00 - 21h00"
+  });
+  infowindow4.open(map,marker4);
+  });
+}
+
+// Initialise the finalised map
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<style>
+/* Body background and text alignment */
+body {
+	background-color: black;
+	text-align: center;
+}
+/* Font colours */
+[id=font_red] {
+	color: #F72401;
+	}
+[id=background_red] {
+	color: #F72401;
+	}
+[id=font_gold] {
+	color: #FDFD67;
+	}
+[id=background_gold] {
+	color: #FDFD67;
+	}
+[id=white_link] {
+	text-decoration: underline;
+	color: white;
+	}
+
+/* Create area at top of page to anchor header */
+[id=header] {
+	background-color: black;
+	background-image: none;
+	margin-left:auto;
+	margin-right: auto;
+	}
+/* Logo wrapping and padding */
+[id=logo2] {
+	width: auto;
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 0px;
+	padding-top: 5px;
+	}
+
+/* Page background colour */
+.current_page {
+	background-color: #FDFD67;
+	}
+	
+.centered {
+	width: 100%;
+    text-align: center;
+	padding-top: 50px;
+	}
+p.papyrus {
+	font-family: Papyrus;
+	color: #FDFD67
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+[id=menu-wrapper] {
+	background-color: #F72401;
+	margin-left:auto;
+	margin-right: auto;
+	}
+[id=menu] {
+	background-color: #F72401;
+	margin-left:auto;
+	margin-right: auto;
+	text-align: center;
+	width: 100%;
+	}
+.map {
+	margin: auto;
+    width: 60%;
+    border: 3px solid #F72401;
+    padding: 10px;
+	background-color: black;
+	width:500px;height:450px;
+	margin-right: 50px;
+	}
+
+[id=page] {
+	background-color: black;
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 0px;
+	}
+	
+/* Create area for times and map */
+[id=opening_hours] {
+	padding-top: 100px;
+	margin-left: 10px;
+	color: #FDFD67;
+	width=100%;
+	}
+[id=opening_hours_day] {
+	font-weight: bold;
+	color: #F72401
+	}
+[id=opening_title] {
+	font: underline;
+	text-decoration: ;
+	padding-bottom: 25px;
+	color: WHITE;
+	}
+	[id=opening_hours_1] {
+	margin-bottom: 25px;
+	font-size: 15px;
+	}
+[id=opening_hours_2] {
+	margin-bottom: 0px;
+	font-size: 15px;
+	}
+[id=opening_hours_3] {
+	margin-top: 0px;
+	font-size: 15px;
+	width: 100%;
+	}
+	
+</style>
+
+</head>
+
+<body>
+	<!-- Logo -->
+	<div id="header">
+		<img id="logo2" src="C:\Users\Robin\Desktop\Website\images\full1.png">
+	</div>
+
+	<!-- Menu -->
+	<div id="menu" class="container">
+		<ul id="menu" class="buttons1">
+			<li class="current_page"><a style="color: black;" href="#">Home</a></li>
+			<li><a href="#">Location</a></li>
+			<li><a href="#" id="button1">Menu</a></li>
+			<li style="padding-left: 50px; padding-right: 50px;" id="button1"></li>
+			<li><a href="#" id="button1">Story</a></li>
+			<li><a href="#" id="button1">Gallery</a></li>
+			<li><a href="" id="button1">Contact</a></li>
+		</ul>
+	</div>
+
+
+	<div id="page" class="container">
+	
+		<div id="content" style="width:700px;">
+			<div class="map" id="googleMap"></div>
+		</div>
+
+		<div class="centered" id="opening_hours">
+			<p id="opening_title">Opening Times  /  Horaires d'Ouverture</p>
+				<text id="opening_hours_day">Wednesday:</text>
+					<p id="opening_hours_1">16h00 - 21h00 &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp Bonne (74380)</p>
+				<text id="opening_hours_day">Thursday:</text>
+					<p id="opening_hours_1">16h00 - 20h00 &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp Messery (74140)</p>
+				<text id="opening_hours_day">Friday:</text>
+					<p id="opening_hours_2">11h45 - 14h00 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Ville la Grand (74100)</p>
+					<p id="opening_hours_3">16h00 - 21h00 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Veigy-Foncenex (74140)</p>
+		</div>
+	</div>
+	
+</body>
+</html>
